@@ -15,33 +15,21 @@ import lombok.*;
 @NoArgsConstructor
 public class ProductDto {
 
-    @NotNull(message = "brand is required")
+    @NotNull(message = "Brand is required")
     private BrandEnum brand;
 
-    @NotEmpty(message = "name is required")
-    @Size(min = 4, message = "Name min size is 4")
+    @NotEmpty(message = "Name is required")
+    @Size(min = 4, message = "Min length is 4")
     private String name;
 
-    @NotNull(message = "price is required")
+    @NotNull(message = "Price is required")
     private int price;
 
-    @NotNull(message = "currency is required")
+    @NotNull(message = "Currency is required")
     private CurrencyEnum currency;
 
     public Product toProduct () {
         Product product = new Product(
-                this.getBrand(),
-                this.getName(),
-                this.getPrice(),
-                this.getCurrency()
-        );
-
-        return product;
-    }
-
-    public Product toEditProduct (Long productId) {
-        Product product = new Product(
-                productId,
                 this.getBrand(),
                 this.getName(),
                 this.getPrice(),

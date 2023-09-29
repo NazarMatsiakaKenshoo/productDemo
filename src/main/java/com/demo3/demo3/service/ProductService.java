@@ -34,7 +34,11 @@ public class ProductService {
     public Product updateProduct(Long productId, ProductDto productDto){
         productRepository.findById(productId).orElseThrow(() -> new ProductNotFount(productId));
 
-        Product updateproduct = productRepository.save(productDto.toEditProduct(productId));
+        Product product = productDto.toProduct();
+
+        product.setId(productId);
+
+        Product updateproduct = productRepository.save(product);
 
         return updateproduct;
     }
