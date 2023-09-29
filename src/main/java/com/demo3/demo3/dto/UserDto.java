@@ -17,18 +17,18 @@ import java.util.Date;
 public class UserDto {
 
     @NotEmpty
-    @Size(min = 3, message = "Incorect user name")
+    @Size(min = 3, message = "Incorrect user name")
     private String userName;
 
     @NotNull
     private SexEnum sex;
 
     @NotEmpty
-    private String birthdeyDate;
+    private String birthdayDate;
 
     public User toUser() {
 
-        return new User(this.userName, this.sex, new Date(this.birthdeyDate));
+        return new User(this.userName, this.sex, new Date(this.birthdayDate));
     }
 
 }

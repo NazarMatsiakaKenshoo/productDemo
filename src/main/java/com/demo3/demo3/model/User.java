@@ -25,11 +25,11 @@ public class User {
     private SexEnum sex;
 
     @Column(name = "birsday_date")
-    private Date birsdayDate;
+    private Date birthdayDate;
 
-    public User(String userName, SexEnum sex, Date birsdayDate) {
+    public User(String userName, SexEnum sex, Date birthdayDate) {
         this.userName = userName;
         this.sex = sex;
-        this.birsdayDate = birsdayDate;
+        this.birthdayDate = birthdayDate;
     }
 }
